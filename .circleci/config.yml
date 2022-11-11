@@ -16,8 +16,6 @@ jobs:
             - v1-dependencies-{{ checksum "package-lock.json" }}
       - run: npm ci
 
-      # force update the webdriver
-      - run: cd ./node_modules/protractor && npm i webdrivermanager@latest
       # because we use "npm ci" to install NPM dependencies
       # we cache "~/.npm" folder
       - save_cache:
@@ -35,8 +33,8 @@ jobs:
           command: tar zcf dist.tar.gz dist/local-weather-app
       - store_artifacts:
           path: dist.tar.gz
-  workflows:
-    version: 2
-    build-and-test:
-      jobs:
-        - build
+    workflows:
+      version: 2
+      build-and-test:
+        jobs:
+          - build
