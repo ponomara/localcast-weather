@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+
+  min-height: 100vh;
+}
+
+[class^="box-"] {
+  /*background-color: skyblue;*/
+  /* Locate containers centrally */
+  display: grid;
+  place-items: center;
+}
+
+.grid-container {
+  display: grid;
+  gap: 50px;
+  /*height: 100vh;*/
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+}
+
+.box-1 {
+  align-content: center;
+  justify-content: center;
+}
+
+.box-2 {
+}
