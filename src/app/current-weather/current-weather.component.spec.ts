@@ -1,11 +1,11 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {By} from "@angular/platform-browser";
-import {injectSpy} from "angular-unit-test-helper";
 import {of} from "rxjs";
 import {WeatherService} from "../weather/weather.service";
 import {fakeWeather} from "../weather/weather.service.fake";
 
 import {CurrentWeatherComponent} from './current-weather.component';
+
 
 describe('CurrentWeatherComponent', () => {
   let component: CurrentWeatherComponent;
@@ -29,7 +29,7 @@ describe('CurrentWeatherComponent', () => {
       }]
     })
     .compileComponents();
-    weatherServiceMock = injectSpy(WeatherService);
+    weatherServiceMock = TestBed.inject(WeatherService) as any;
 
     fixture = TestBed.createComponent(CurrentWeatherComponent);
     component = fixture.componentInstance;
