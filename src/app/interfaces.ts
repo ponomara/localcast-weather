@@ -6,3 +6,8 @@ export interface ICurrentWeather {
   temperature: number,
   description: string
 }
+
+export interface Coordinates {
+  latitude: number,
+  longitude: number
+}
